@@ -58,7 +58,7 @@ body::after{content:'';pointer-events:none;position:fixed;inset:0;z-index:9999;
 }
 .setup-guide-btn:hover{background:rgba(255,255,255,.1);border-color:#fff}
 .setup-skip{font-size:.88rem;color:#a3a3a3;cursor:pointer;text-align:center;letter-spacing:1px;text-decoration:underline;transition:color .2s;}
-.setup-skip:hover{color:var(--red )}
+.setup-skip:hover{color:var(--red)}
 
 /* ═══════════════ INSTRUCTION PAGE ═══════════════ */
 #instr-page{
@@ -84,20 +84,20 @@ body::after{content:'';pointer-events:none;position:fixed;inset:0;z-index:9999;
 .ip-section{display:flex;flex-direction:column;gap:16px}
 .ip-tag{font-size:.75rem;letter-spacing:3.5px;color:var(--cyan);font-weight:700;text-transform:uppercase}
 .ip-h{font-family:'Syne',sans-serif;font-weight:800;font-size:1.9rem;line-height:1.2;color:#fff}
-.ip-p{font-size:1rem;color:#aaa;line-height:2;letter-spacing:.3px}
-.ip-p b{color:#fff}
+.ip-p{font-size:1rem;color:#fff;line-height:2;letter-spacing:.3px}
+.ip-p b{color:var(--amber)}
 .ip-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .ip-card{background:#090909;border:1px solid var(--border);border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:10px}
-.ip-card-title{font-family:'Syne',sans-serif;font-weight:800;font-size:1.15rem;color:#fff}
-.ip-card-desc{font-size:.92rem;color:#888;line-height:1.8}
+.ip-card-title{font-family:'Syne',sans-serif;font-weight:800;font-size:1.15rem;color:var(--cyan)}
+.ip-card-desc{font-size:.92rem;color:#fff;line-height:1.8}
 .ip-steps{display:flex;flex-direction:column;gap:14px}
 .ip-step{display:flex;gap:16px;align-items:flex-start}
 .ip-step-num{width:36px;height:36px;border-radius:50%;background:var(--cyan);color:#000;font-weight:700;font-size:.9rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:3px}
-.ip-step-txt{font-size:.96rem;color:#aaa;line-height:1.9}
-.ip-step-txt b{color:#fff}
-.ip-tip{background:#090909;border:1px solid rgba(34,211,238,.25);border-radius:12px;padding:20px 24px;font-size:.92rem;color:#aaa;line-height:1.9}
+.ip-step-txt{font-size:.96rem;color:#fff;line-height:1.9}
+.ip-step-txt b{color:var(--amber)}
+.ip-tip{background:#090909;border:1px solid rgba(34,211,238,.25);border-radius:12px;padding:20px 24px;font-size:.92rem;color:#fff;line-height:1.9}
 .ip-tip b{color:var(--cyan)}
-.ip-diagram{background:#060606;border:1px solid var(--border);border-radius:14px;padding:28px;font-size:.92rem;color:#888;line-height:2.3;font-family:'Space Mono',monospace}
+.ip-diagram{background:#060606;border:1px solid var(--border);border-radius:14px;padding:28px;font-size:.92rem;color:#fff;line-height:2.3;font-family:'Space Mono',monospace}
 .ip-diagram .hi{color:var(--cyan)}.ip-diagram .hi2{color:var(--amber)}.ip-diagram .hi3{color:var(--green)}
 .ip-start-btn{background:var(--cyan);color:#000;border:none;border-radius:12px;padding:18px 48px;font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;letter-spacing:2px;cursor:pointer;align-self:flex-start;transition:opacity .2s}
 .ip-start-btn:hover{opacity:.85}
@@ -152,6 +152,7 @@ body::after{content:'';pointer-events:none;position:fixed;inset:0;z-index:9999;
 #eog-ring{position:fixed;left:-200px;top:-200px;width:36px;height:36px;border-radius:50%;border:2px solid var(--cyan);background:rgba(34,211,238,.12);box-shadow:0 0 16px rgba(34,211,238,.45);transform:translate(-50%,-50%);pointer-events:none;z-index:99998;display:none;transition:width .08s,height .08s}
 #eog-ring.b1{width:52px;height:52px;background:rgba(34,211,238,.85);box-shadow:0 0 55px var(--cyan)}
 #eog-ring.b2{width:56px;height:56px;background:rgba(245,158,11,.85);border-color:var(--amber);box-shadow:0 0 55px var(--amber)}
+#eog-ring.b3{width:60px;height:60px;background:rgba(239,68,68,.85);border-color:var(--red);box-shadow:0 0 60px var(--red)}
 #dsvg{position:fixed;left:-200px;top:-200px;transform:translate(-50%,-50%);pointer-events:none;z-index:99997}
 #dsvg circle{fill:none;stroke-width:3;stroke-linecap:round;stroke-dasharray:172;stroke-dashoffset:172;transform-origin:27px 27px;transform:rotate(-90deg)}
 body.demo-mode #dsvg circle{stroke:var(--amber);filter:drop-shadow(0 0 5px var(--amber))}
@@ -181,6 +182,12 @@ body.eog-mode  #dsvg circle{stroke:var(--cyan); filter:drop-shadow(0 0 5px var(-
 /* ═══════════════ ALERTS ═══════════════ */
 #leads-alert{display:none;position:fixed;top:0;left:0;right:0;z-index:10000;padding:9px;background:#2a0000;border-bottom:1px solid var(--red);color:var(--red);text-align:center;font-size:.85rem;letter-spacing:3px;animation:lf .5s step-start infinite}
 #leads-alert.on{display:block}
+#sim-banner{
+  display:none;position:fixed;top:0;left:0;right:0;z-index:10001;
+  padding:8px;background:rgba(59,130,246,.15);border-bottom:1px solid var(--blue);
+  color:var(--blue);text-align:center;font-size:.78rem;letter-spacing:3px;font-weight:700;
+}
+#sim-banner.on{display:block}
 @keyframes lf{50%{background:#0f0000}}
 #sos-bg{display:none;position:fixed;inset:0;z-index:9000;pointer-events:none;background:rgba(239,68,68,.05);animation:sob .8s ease-in-out infinite alternate}
 #sos-bg.on{display:block}
@@ -211,6 +218,188 @@ body.eog-mode  #dsvg circle{stroke:var(--cyan); filter:drop-shadow(0 0 5px var(-
 /* ═══════════════ VOICE INDICATOR ═══════════════ */
 #voice-ind{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);z-index:9998;font-size:.75rem;color:var(--cyan);letter-spacing:1.5px;border:1px solid rgba(34,211,238,.3);border-radius:20px;padding:5px 14px;background:rgba(34,211,238,.07);opacity:0;transition:opacity .3s;pointer-events:none;white-space:nowrap}
 #voice-ind.on{opacity:1}
+
+/* ═══════════════════════════════════════════════════════
+   LEADS POPUP
+   ═══════════════════════════════════════════════════════ */
+#leads-popup{
+  position:fixed;
+  top:50%;left:50%;
+  transform:translate(-50%,-50%) scale(0.72);
+  z-index:99999;
+  width:440px;
+  border-radius:26px;
+  padding:48px 44px 40px;
+  text-align:center;
+  display:flex;flex-direction:column;align-items:center;gap:14px;
+  opacity:0;pointer-events:none;
+  transition:opacity .45s cubic-bezier(.175,.885,.32,1.275),
+             transform .45s cubic-bezier(.175,.885,.32,1.275);
+}
+#leads-popup.show{
+  opacity:1;
+  transform:translate(-50%,-50%) scale(1);
+}
+#leads-popup.type-connected{
+  background:#020e07;
+  border:2px solid var(--green);
+  box-shadow:0 0 90px rgba(16,185,129,.45),
+             0 0 30px rgba(16,185,129,.18),
+             inset 0 0 50px rgba(16,185,129,.07);
+}
+#leads-popup.type-detached{
+  background:#0e0202;
+  border:2px solid var(--red);
+  box-shadow:0 0 90px rgba(239,68,68,.45),
+             0 0 30px rgba(239,68,68,.18),
+             inset 0 0 50px rgba(239,68,68,.07);
+}
+#leads-popup.show::before{
+  content:'';
+  position:absolute;inset:-14px;
+  border-radius:36px;
+  border:1.5px solid;
+  pointer-events:none;
+  animation:lp-ring-pulse 1.4s ease-out infinite;
+}
+#leads-popup.type-connected.show::before{border-color:var(--green);}
+#leads-popup.type-detached.show::before{border-color:var(--red);}
+#leads-popup.show::after{
+  content:'';
+  position:absolute;inset:-26px;
+  border-radius:44px;
+  border:1px solid;
+  pointer-events:none;
+  animation:lp-ring-pulse 1.4s ease-out .35s infinite;
+  opacity:.4;
+}
+#leads-popup.type-connected.show::after{border-color:var(--green);}
+#leads-popup.type-detached.show::after{border-color:var(--red);}
+@keyframes lp-ring-pulse{
+  0%{opacity:.7;transform:scale(1)}
+  100%{opacity:0;transform:scale(1.06)}
+}
+.lp-icon{font-size:4.8rem;line-height:1;filter:drop-shadow(0 0 18px currentColor)}
+.lp-tag{
+  font-size:.68rem;letter-spacing:4.5px;text-transform:uppercase;font-weight:700;
+  padding:4px 14px;border-radius:20px;border:1px solid;
+}
+#leads-popup.type-connected .lp-tag{color:var(--green);border-color:rgba(16,185,129,.4);background:rgba(16,185,129,.08)}
+#leads-popup.type-detached .lp-tag{color:var(--red);border-color:rgba(239,68,68,.4);background:rgba(239,68,68,.08)}
+.lp-title{
+  font-family:'Syne',sans-serif;font-weight:800;font-size:2.1rem;
+  color:#fff;line-height:1.1;letter-spacing:-0.5px;
+}
+.lp-divider{width:52px;height:3px;border-radius:2px;margin:2px 0}
+#leads-popup.type-connected .lp-divider{background:var(--green);box-shadow:0 0 12px var(--green)}
+#leads-popup.type-detached .lp-divider{background:var(--red);box-shadow:0 0 12px var(--red)}
+.lp-sub{font-size:.88rem;color:#aaa;line-height:1.9;letter-spacing:.4px;max-width:300px}
+.lp-sub b{color:#fff}
+.lp-countdown{
+  margin-top:4px;font-size:.72rem;letter-spacing:3px;color:#555;
+  text-transform:uppercase;
+}
+
+/* ═══════════════════════════════════════════════════════
+   SYSTEM PAUSE OVERLAY
+   ═══════════════════════════════════════════════════════ */
+#sys-pause-overlay{
+  position:absolute;inset:0;z-index:50;
+  background:rgba(0,0,0,.86);
+  backdrop-filter:blur(4px);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;
+  border-radius:0;
+  opacity:0;pointer-events:none;
+  transition:opacity .35s ease;
+}
+#sys-pause-overlay.active{opacity:1;pointer-events:all}
+.spo-ring{
+  width:90px;height:90px;border-radius:50%;
+  border:2px solid rgba(239,68,68,.5);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 0 40px rgba(239,68,68,.2),inset 0 0 20px rgba(239,68,68,.05);
+  position:relative;
+}
+.spo-ring::before{
+  content:'';position:absolute;inset:-10px;border-radius:50%;
+  border:1px solid rgba(239,68,68,.2);
+  animation:spo-ring-pulse 2s ease-in-out infinite;
+}
+@keyframes spo-ring-pulse{
+  0%,100%{opacity:.4;transform:scale(1)}
+  50%{opacity:1;transform:scale(1.04)}
+}
+.spo-icon{font-size:2.8rem;line-height:1}
+.spo-title{
+  font-family:'Syne',sans-serif;font-weight:800;font-size:2.4rem;
+  color:#fff;letter-spacing:4px;text-align:center;
+}
+.spo-sub{
+  font-size:.82rem;color:#555;letter-spacing:3px;text-transform:uppercase;
+  text-align:center;
+  animation:spo-blink 1.6s step-start infinite;
+}
+@keyframes spo-blink{50%{opacity:0}}
+.spo-hint{
+  margin-top:8px;font-size:.78rem;color:rgba(239,68,68,.5);
+  letter-spacing:2px;text-align:center;
+  border:1px solid rgba(239,68,68,.2);border-radius:20px;
+  padding:7px 20px;background:rgba(239,68,68,.04);
+}
+/* header badge when paused */
+#pause-badge{
+  display:none;font-size:.7rem;font-weight:700;letter-spacing:2px;
+  padding:5px 14px;border-radius:20px;white-space:nowrap;
+  border:1px solid rgba(239,68,68,.5);color:var(--red);
+  background:rgba(239,68,68,.08);
+  animation:spo-blink 1s step-start infinite;
+}
+#pause-badge.on{display:block}
+
+/* ═══════════════════════════════════════════════════════
+   SENSOR STATUS (sidebar widget)
+   ═══════════════════════════════════════════════════════ */
+.sb-sensor-wrap{display:flex;flex-direction:column;gap:8px}
+.sb-sensor-row{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:11px 14px;border:1px solid var(--border);border-radius:10px;
+  background:#0a0a0a;transition:all .35s;
+}
+.sb-sensor-row.ok{
+  border-color:rgba(16,185,129,.45);background:rgba(16,185,129,.05);
+}
+.sb-sensor-row.bad{
+  border-color:rgba(239,68,68,.45);background:rgba(239,68,68,.05);
+  animation:sensor-bad-bg .9s ease-in-out infinite alternate;
+}
+.sb-sensor-row.idle{border-color:var(--border);background:#0a0a0a}
+@keyframes sensor-bad-bg{to{background:rgba(239,68,68,.11)}}
+.sb-sensor-left{display:flex;align-items:center;gap:9px}
+.sb-sensor-dot{
+  width:9px;height:9px;border-radius:50%;background:#2a2a2a;
+  flex-shrink:0;transition:all .35s;
+}
+.sb-sensor-row.ok  .sb-sensor-dot{background:var(--green);box-shadow:0 0 8px var(--green);animation:pd 1.3s ease-in-out infinite}
+.sb-sensor-row.bad .sb-sensor-dot{background:var(--red);box-shadow:0 0 8px var(--red);animation:pd .5s ease-in-out infinite}
+.sb-sensor-label{font-size:.82rem;font-weight:700;letter-spacing:1.5px;color:var(--dim);transition:color .35s}
+.sb-sensor-row.ok  .sb-sensor-label{color:var(--green)}
+.sb-sensor-row.bad .sb-sensor-label{color:var(--red)}
+.sb-sensor-status{font-size:.75rem;font-weight:700;letter-spacing:2px;color:var(--dim);transition:color .35s}
+.sb-sensor-row.ok  .sb-sensor-status{color:var(--green)}
+.sb-sensor-row.bad .sb-sensor-status{color:var(--red)}
+/* quality meter inside sensor widget */
+.sb-sensor-quality{
+  display:flex;align-items:center;gap:8px;
+  padding:8px 14px;border:1px solid var(--border);border-radius:10px;
+  background:#0a0a0a;transition:all .35s;
+}
+.sb-sq-label{font-size:.72rem;color:var(--dim);letter-spacing:1.5px;text-transform:uppercase;flex:1}
+.sb-sq-bars{display:flex;gap:3px;align-items:flex-end}
+.sb-sq-bar{width:5px;border-radius:2px;background:#222;transition:all .4s}
+.sb-sq-bar.lit-ex{background:var(--green);box-shadow:0 0 4px var(--green)}
+.sb-sq-bar.lit-go{background:var(--cyan);box-shadow:0 0 4px var(--cyan)}
+.sb-sq-bar.lit-fa{background:var(--amber);box-shadow:0 0 4px var(--amber)}
+.sb-sq-bar.lit-po{background:var(--red);box-shadow:0 0 4px var(--red)}
 
 /* ═══════════════ MAIN LAYOUT ═══════════════ */
 .app{display:flex;flex-direction:column;height:100vh}
@@ -248,7 +437,7 @@ body.eog-mode #mode-badge{border-color:rgba(34,211,238,.4);color:var(--cyan);bac
 .sidebar::-webkit-scrollbar-thumb{background:#222;border-radius:2px}
 .sidebar::-webkit-scrollbar-thumb:hover{background:#333}
 .sb-section{padding:16px 16px 14px;border-bottom:1px solid var(--border);flex-shrink:0}
-.sb-label{font-size:.68rem;letter-spacing:3px;color:#666;font-weight:700;text-transform:uppercase;margin-bottom:11px}
+.sb-label{font-size:.80rem;letter-spacing:3px;color:#fff;font-weight:700;text-transform:uppercase;margin-bottom:11px}
 .sb-btn{width:100%;display:flex;align-items:center;gap:10px;background:transparent;border:1px solid var(--border);border-radius:10px;padding:11px 14px;color:#fff;font-family:'Space Mono',monospace;font-size:.88rem;font-weight:700;letter-spacing:.5px;cursor:pointer;transition:all .2s;margin-bottom:8px;text-align:left}
 .sb-btn:last-child{margin-bottom:0}
 .sb-btn:hover{border-color:var(--cyan);color:var(--cyan);background:rgba(34,211,238,.04)}
@@ -296,7 +485,7 @@ body.eog-mode  .sb-mode-info-row b{color:var(--cyan)}
 @keyframes lai{from{opacity:0;transform:translateX(4px)}to{opacity:1;transform:none}}
 
 /* ═══════════════ MAIN CONTENT ═══════════════ */
-.content{flex:1;display:flex;flex-direction:column;min-width:0;overflow:hidden}
+.content{flex:1;display:flex;flex-direction:column;min-width:0;overflow:hidden;position:relative}
 
 /* ═══════════════ TILES GRID ═══════════════ */
 .grid{flex:1;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:10px;padding:10px;min-height:0;overflow:hidden}
@@ -312,7 +501,6 @@ body.eog-mode  .sb-mode-info-row b{color:var(--cyan)}
 .tile::before,.tile::after{content:'';position:absolute;width:14px;height:14px;border-color:var(--border);border-style:solid;transition:border-color .2s}
 .tile::before{top:10px;left:10px;border-width:1px 0 0 1px;border-radius:2px 0 0 0}
 .tile::after{bottom:10px;right:10px;border-width:0 1px 1px 0;border-radius:0 0 2px 0}
-/* EDIT button — stops all events from bubbling to tile */
 .tile-edit-btn{
   position:absolute;top:8px;right:8px;z-index:6;font-size:.6rem;
   background:rgba(255,255,255,.03);border:1px solid #222;border-radius:6px;
@@ -323,7 +511,7 @@ body.eog-mode  .sb-mode-info-row b{color:var(--cyan)}
 .ti{font-size:clamp(1.6rem,4vh,2.8rem);line-height:1;transition:transform .2s,filter .2s;filter:grayscale(1) brightness(.35);flex-shrink:0}
 .tn{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.3rem,3.8vh,2.5rem);letter-spacing:-1px;text-align:center;line-height:1;flex-shrink:0}
 .ts{font-size:clamp(.75rem,1.5vh,.95rem);color:#ddd;letter-spacing:3px;line-height:1;flex-shrink:0;font-weight:700}
-.th3{font-size:clamp(.62rem,1.2vh,.8rem);letter-spacing:.8px;margin-top:4px;font-weight:700;text-align:center;flex-shrink:0;line-height:1.4;padding:3px 10px;border-radius:20px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.4)}
+.th3{font-size:clamp(1rem,1.2vh,.8rem);letter-spacing:.8px;margin-top:4px;font-weight:700;text-align:center;flex-shrink:0;line-height:1.4;padding:3px 10px;border-radius:20px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.4)}
 body.demo-mode .th3{color:rgba(245,158,11,.85);border-color:rgba(245,158,11,.2);background:rgba(245,158,11,.05)}
 body.eog-mode  .th3{color:rgba(34,211,238,.75);border-color:rgba(34,211,238,.18);background:rgba(34,211,238,.04)}
 .tl{font-size:clamp(.52rem,1vh,.68rem);color:var(--dim);letter-spacing:1px;position:absolute;bottom:10px;left:0;right:0;text-align:center;opacity:0;transition:opacity .3s}
@@ -418,6 +606,7 @@ Look CENTER &rarr; enters REST zone &mdash; nothing triggers
 <span class="hi">STEP 2 &mdash; SELECT</span>
 <span class="hi3">Single blink</span>   &rarr; activates TOP tile in your column
 <span class="hi3">Double blink</span>   &rarr; activates BOTTOM tile in your column
+<span class="hi3">Triple blink</span>   &rarr; <span class="hi2">PAUSE / RESUME system</span> (freezes all tiles)
 <span class="hi3">Stare 1 second</span> &rarr; dwell-activates the tile under the cursor
       </div>
     </div>
@@ -439,6 +628,7 @@ Green wire  &rarr; Center forehead (reference)     &rarr; RL on AD8232
 
 Press each pad firmly. Keep face still during 3-second calibration on power-on.
 If <span class="hi2">ELECTRODE DETACHMENT</span> appears &mdash; press the pads firmly again.
+The <span class="hi3">Electrode Sensor</span> widget in the sidebar shows live contact status.
       </div>
     </div>
     <div class="ip-tip"><b>Chrome voice fix:</b> Click <b>Enable Voice</b> in the sidebar on first load. This is a one-time browser permission requirement.</div>
@@ -482,6 +672,7 @@ If <span class="hi2">ELECTRODE DETACHMENT</span> appears &mdash; press the pads 
 
 <!-- ═══════════════ FLOATING ELEMENTS ═══════════════ -->
 <div id="leads-alert">ELECTRODE DETACHMENT &mdash; Press electrodes firmly onto skin</div>
+<div id="sim-banner">⚡ HARDWARE-IN-LOOP SIMULATION — FULL ESP-NOW PIPELINE ACTIVE</div>
 <div id="sos-bg"></div>
 <div id="ring"></div>
 <div id="eog-ring"></div>
@@ -489,6 +680,16 @@ If <span class="hi2">ELECTRODE DETACHMENT</span> appears &mdash; press the pads 
 <div id="rest"><span>REST</span></div>
 <div id="toast"></div>
 <div id="voice-ind">&#128266; Speaking&hellip;</div>
+
+<!-- ═══════════════ LEADS POPUP ═══════════════ -->
+<div id="leads-popup">
+  <div class="lp-icon" id="lp-icon">🔴</div>
+  <div class="lp-tag" id="lp-tag">SENSOR STATUS</div>
+  <div class="lp-title" id="lp-title">ELECTRODE DETACHED</div>
+  <div class="lp-divider"></div>
+  <div class="lp-sub" id="lp-sub">Press electrode pads firmly against skin to restore signal.</div>
+  <div class="lp-countdown" id="lp-countdown">Dismissing in 4s…</div>
+</div>
 
 <div id="tg">
   <div class="tg-h"><div class="tg-dot"></div><span id="tg-title">ALERT SENT</span></div>
@@ -508,6 +709,7 @@ If <span class="hi2">ELECTRODE DETACHMENT</span> appears &mdash; press the pads 
       <div id="cp" class="offline"><div class="cd"></div><span id="ct">ESP32 OFFLINE</span></div>
       <div class="hpill" id="blpill"><span class="pd2"></span>BLINKS<span class="pv" id="blcnt">0</span></div>
       <div class="hpill" id="latpill"><span class="pd2"></span>LATENCY<span class="pv" id="latv">--</span><span style="font-size:.55rem;color:var(--dim)">ms</span></div>
+      <div id="pause-badge">&#9646; PAUSED</div>
       <div id="mode-badge">DEMO MODE</div>
       <button id="mode-btn" onclick="toggleMode(); event.stopPropagation();">SWITCH TO EOG</button>
     </div>
@@ -522,8 +724,8 @@ If <span class="hi2">ELECTRODE DETACHMENT</span> appears &mdash; press the pads 
       </div>
       <div class="sb-section">
         <div class="sb-label">Voice Alerts</div>
-        <button id="speech-unlock" onclick="unlockSpeech()">Enable Voice</button>
-        <div id="voice-enabled-badge">Voice alerts enabled</div>
+        <button id="speech-unlock" onclick="unlockSpeech()">&#128266; Enable Voice</button>
+        <div id="voice-enabled-badge">&#10003; Voice alerts enabled</div>
         <button id="voice-disable-btn" onclick="disableSpeech()">Disable Voice</button>
       </div>
       <div class="sb-section">
@@ -533,6 +735,35 @@ If <span class="hi2">ELECTRODE DETACHMENT</span> appears &mdash; press the pads 
           <span class="sb-led-val" id="sb-led-val">OFF</span>
         </div>
       </div>
+
+      <!-- ═══ ELECTRODE SENSOR STATUS ═══ -->
+      <div class="sb-section">
+        <div class="sb-label">Electrode Sensor</div>
+        <div class="sb-sensor-wrap">
+          <div class="sb-sensor-row idle" id="sb-sensor-row">
+            <div class="sb-sensor-left">
+              <div class="sb-sensor-dot"></div>
+              <span class="sb-sensor-label">LEADS</span>
+            </div>
+            <span class="sb-sensor-status" id="sb-sensor-status">NO DATA</span>
+          </div>
+          <!-- signal quality bar -->
+          <div class="sb-sensor-quality">
+            <span class="sb-sq-label">QUALITY</span>
+            <div class="sb-sq-bars" id="sq-bars">
+              <div class="sb-sq-bar" style="height:8px"  id="sq1"></div>
+              <div class="sb-sq-bar" style="height:12px" id="sq2"></div>
+              <div class="sb-sq-bar" style="height:16px" id="sq3"></div>
+              <div class="sb-sq-bar" style="height:20px" id="sq4"></div>
+            </div>
+            <span style="font-size:.72rem;color:var(--dim);letter-spacing:1.5px;margin-left:4px" id="sq-label">&mdash;</span>
+          </div>
+          <!-- ── FIX 2: leads hint shown when DETACHED ── -->
+          <div id="sb-sensor-hint" style="display:none;font-size:.72rem;color:var(--red);letter-spacing:.6px;line-height:1.8;padding:6px 2px 2px;"></div>
+        </div>
+      </div>
+      <!-- ═══════════════════════════════════ -->
+
       <div class="sb-section">
         <div class="sb-label">Live Stats</div>
         <div class="sb-stat"><span class="sb-stat-l">Actions</span><span class="sb-stat-v am" id="sb-act">0</span></div>
@@ -560,6 +791,18 @@ If <span class="hi2">ELECTRODE DETACHMENT</span> appears &mdash; press the pads 
     </aside>
 
     <div class="content">
+
+      <!-- ═══ SYSTEM PAUSE OVERLAY ═══ -->
+      <div id="sys-pause-overlay">
+        <div class="spo-ring">
+          <div class="spo-icon">&#9646;</div>
+        </div>
+        <div class="spo-title">SYSTEM PAUSED</div>
+        <div class="spo-sub">All tile triggers frozen</div>
+        <div class="spo-hint">Triple blink to resume &mdash; or press <b>P</b></div>
+      </div>
+      <!-- ═══════════════════════════════════ -->
+
       <main class="grid">
         <div class="tile nurse" data-lbl="NURSE" data-cls="nurse" data-row="0" data-col="0" data-msg="Medical assistance requested">
           <button class="tile-edit-btn" onclick="event.stopPropagation(); openCustomize(this.closest('.tile'))">EDIT</button>
@@ -638,23 +881,26 @@ function closeInstructions() {
 }
 
 // ═══════════════════════════════════════════════
-//  SPEECH
+//  FIX 1 — SPEECH (reliable unlock, no onend dependency)
 // ═══════════════════════════════════════════════
 let speechUnlocked = false;
 let speechQueue = [];
 
 function unlockSpeech() {
-  const u = new SpeechSynthesisUtterance('');
-  u.volume = 0;
-  u.onend = () => {
-    speechUnlocked = true;
-    document.getElementById('speech-unlock').classList.remove('show');
-    document.getElementById('voice-enabled-badge').classList.add('show');
-    document.getElementById('voice-disable-btn').classList.add('show');
-    while (speechQueue.length) speak(speechQueue.shift());
-  };
-  window.speechSynthesis.speak(u);
+  // Set unlocked immediately — don't wait for onend callback (unreliable in Chrome)
+  speechUnlocked = true;
+  document.getElementById('speech-unlock').classList.remove('show');
+  document.getElementById('voice-enabled-badge').classList.add('show');
+  document.getElementById('voice-disable-btn').classList.add('show');
+  // Warm-up the audio context with a near-silent utterance to satisfy browser autoplay policy
+  window.speechSynthesis.cancel();
+  const warmup = new SpeechSynthesisUtterance(' ');
+  warmup.volume = 0.001;
+  window.speechSynthesis.speak(warmup);
+  // Flush any queued speech after warm-up completes
+  setTimeout(() => { while (speechQueue.length) speak(speechQueue.shift()); }, 300);
 }
+
 function disableSpeech() {
   speechUnlocked = false;
   window.speechSynthesis.cancel();
@@ -676,7 +922,7 @@ function speak(text) {
   u.onerror = () => ind.classList.remove('on');
   window.speechSynthesis.speak(u);
 }
-// Auto-unlock on first user click
+// Auto-unlock on first user interaction
 document.addEventListener('click', function autoUnlock() {
   if (!speechUnlocked) unlockSpeech();
   document.removeEventListener('click', autoUnlock);
@@ -727,6 +973,7 @@ function doSetupConnect() {
 function skipToDemo() {
   document.getElementById('setup-screen').classList.add('hidden');
   addLog('sys','SYS','Running in Demo Mode');
+  document.getElementById('mode-badge').textContent = 'DEMO MODE';
 }
 window.addEventListener('DOMContentLoaded', () => {
   if (espIP) document.getElementById('esp-ip').value = espIP;
@@ -739,18 +986,22 @@ function connectWS(url) {
   try { wsConn = new WebSocket(url); } catch(e) { showSetupErr(); return; }
   const timeout = setTimeout(() => { wsConn.close(); showSetupErr(); }, 6000);
   wsConn.onopen = () => {
+    if(isDemo) toggleMode();   // auto-switch to EOG mode on ESP32 connect
     clearTimeout(timeout); wsOk=true;
     document.getElementById('setup-screen').classList.add('hidden');
     cp.className='online'; ct.textContent='ESP32 ONLINE';
     document.getElementById('blpill').classList.add('live');
     document.getElementById('latpill').classList.add('live');
     addLog('sys','SYS','ESP32 connected');
+    prevLeadsOff = null;
   };
   wsConn.onclose = () => {
     clearTimeout(timeout); wsOk=false;
     cp.className='offline'; ct.textContent='ESP32 OFFLINE';
     document.getElementById('blpill').classList.remove('live');
     document.getElementById('latpill').classList.remove('live');
+    updateSensorStatus(null);
+    prevLeadsOff = null;
     setTimeout(() => connectWS(url), 3000);
   };
   wsConn.onerror = () => wsConn.close();
@@ -790,9 +1041,6 @@ setInterval(() => { if(lastPktTime) document.getElementById('latv').textContent=
 
 // ═══════════════════════════════════════════════
 //  TELEGRAM POPUP
-//  FIX: showTgSending now always sets a fallback tgTimer
-//  so the popup never hangs forever on "Sending via ESP32"
-//  handleTgResult clears that timer and shows the real result
 // ═══════════════════════════════════════════════
 const TG_META = {
   emerg:  {m:'sos', to:'Doctor + Family + Friend'},
@@ -812,17 +1060,15 @@ function showTgSending(cls, src, tileName) {
   const st   = document.getElementById('tg-st');
   const stxt = document.getElementById('tg-stxt');
 
-  clearTimeout(tgTimer); // always clear any previous timer first
+  clearTimeout(tgTimer);
 
   if (cls === 'lights') {
-    // Lights: no telegram, just show LED state and auto-dismiss
     sp.style.display = 'none';
     st.className = 'tg-st ok';
     stxt.textContent = 'LED is now ' + (ledOn ? 'ON' : 'OFF');
     tgTimer = setTimeout(() => pop.classList.remove('on'), 4000);
 
   } else if (!wsOk) {
-    // Demo mode (no ESP32): simulate sending then show demo result
     sp.style.display = 'block';
     st.className = 'tg-st wait';
     stxt.textContent = 'Demo mode — simulating send';
@@ -835,14 +1081,10 @@ function showTgSending(cls, src, tileName) {
     }, 1500);
 
   } else {
-    // Real ESP32 connected: show sending state
-    // FIX: set a fallback timer (10s) so popup never hangs forever.
-    // handleTgResult will clear this and show the real result much sooner.
     sp.style.display = 'block';
     st.className = 'tg-st wait';
     stxt.textContent = 'Sending via ESP32…';
     tgTimer = setTimeout(() => {
-      // Fallback: if no tg_result arrived after 10s, show timeout message
       sp.style.display = 'none';
       st.className = 'tg-st fail';
       stxt.textContent = 'No response from ESP32 — check connection';
@@ -853,7 +1095,6 @@ function showTgSending(cls, src, tileName) {
 }
 
 function handleTgResult(d) {
-  // Clear the fallback timer set by showTgSending — result arrived
   clearTimeout(tgTimer);
   const sp   = document.getElementById('tg-spin');
   const st   = document.getElementById('tg-st');
@@ -865,7 +1106,6 @@ function handleTgResult(d) {
   stxt.textContent = d.failed === 0
     ? `✓ Delivered to ${d.sent} recipient(s)`
     : `${d.sent} sent · ${d.failed} failed`;
-  // Auto-dismiss after 6 seconds
   tgTimer = setTimeout(() => document.getElementById('tg').classList.remove('on'), 6000);
 }
 
@@ -969,6 +1209,142 @@ function sigQ(r,f){
 }
 
 // ═══════════════════════════════════════════════
+//  FIX 3 — SYSTEM PAUSE (triple blink = pause / resume)
+//  Mode badge turns RED + "⏸ PAUSED" so you always know state
+// ═══════════════════════════════════════════════
+let systemPaused = false;
+
+function toggleSystemPause() {
+  systemPaused = !systemPaused;
+  const overlay   = document.getElementById('sys-pause-overlay');
+  const badge     = document.getElementById('pause-badge');
+  const modeBadge = document.getElementById('mode-badge');
+
+  if (systemPaused) {
+    overlay.classList.add('active');
+    badge.classList.add('on');
+    // Override mode badge to scream PAUSED in red so it's unmissable
+    modeBadge.textContent = '\u23F8 PAUSED';
+    modeBadge.style.cssText = 'border:1px solid rgba(239,68,68,.7);color:#ef4444;background:rgba(239,68,68,.13);animation:spo-blink .8s step-start infinite;font-size:.7rem;font-weight:800;letter-spacing:2px;padding:5px 14px;border-radius:20px;white-space:nowrap;';
+    stopDwell();
+    speak('System paused.');
+    addLog('sys', 'SYS', 'System PAUSED — triple blink or press P to resume');
+    showToast('\u23F8 SYSTEM PAUSED — Triple blink or press P');
+  } else {
+    overlay.classList.remove('active');
+    badge.classList.remove('on');
+    // Restore mode badge to normal
+    modeBadge.style.cssText = '';
+    modeBadge.textContent = isDemo ? 'DEMO MODE' : 'EOG MODE';
+    speak('System resumed.');
+    addLog('sys', 'SYS', 'System RESUMED');
+    showToast('\u25BA SYSTEM RESUMED');
+  }
+}
+
+// Keyboard shortcut: press P to toggle pause (useful for demos)
+document.addEventListener('keydown', e => {
+  if (e.key === 'p' || e.key === 'P') {
+    if (!isOverlayOpen()) toggleSystemPause();
+  }
+  if ((e.key === 's' || e.key === 'S') && !isOverlayOpen() && !isDemo) {
+    injectSimSequence();
+  }
+});
+
+// ═══════════════════════════════════════════════
+//  FIX 2 — ELECTRODE SENSOR STATUS
+//  Shows actionable hint when DETACHED
+// ═══════════════════════════════════════════════
+let prevLeadsOff = null;
+let leadsPopupTimer  = null;
+let leadsCountdownId = null;
+let leadsCountdownSec = 4;
+
+function updateSensorStatus(state) {
+  const row    = document.getElementById('sb-sensor-row');
+  const status = document.getElementById('sb-sensor-status');
+  const hint   = document.getElementById('sb-sensor-hint');
+  if (state === null) {
+    row.className = 'sb-sensor-row idle';
+    status.textContent = 'NO DATA';
+    if (hint) hint.style.display = 'none';
+  } else if (state === true) {          // leads OFF = detached
+    row.className = 'sb-sensor-row bad';
+    status.textContent = 'DETACHED';
+    if (hint) {
+      hint.style.display = 'block';
+      hint.innerHTML = '&#9888; Re-seat pads firmly on skin:<br>'
+        + 'Red &rarr; Right temple &bull; Yellow &rarr; Left temple<br>'
+        + 'Green &rarr; Center forehead (ref)';
+    }
+  } else {                              // leads OK = connected
+    row.className = 'sb-sensor-row ok';
+    status.textContent = 'CONNECTED';
+    if (hint) hint.style.display = 'none';
+  }
+}
+
+function updateQualityBars(q) {
+  const bars  = ['sq1','sq2','sq3','sq4'];
+  const label = document.getElementById('sq-label');
+  bars.forEach(id => { document.getElementById(id).className = 'sb-sq-bar'; });
+  if (!q) { label.textContent = '\u2014'; return; }
+  label.textContent = q;
+  const map = {
+    POOR:      [['lit-po'], [], [], []],
+    FAIR:      [['lit-fa'], ['lit-fa'], [], []],
+    GOOD:      [['lit-go'], ['lit-go'], ['lit-go'], []],
+    EXCELLENT: [['lit-ex'], ['lit-ex'], ['lit-ex'], ['lit-ex']],
+  };
+  (map[q] || []).forEach((cls, i) => {
+    const el = document.getElementById(bars[i]);
+    cls.forEach(c => el.classList.add(c));
+  });
+}
+
+function showLeadsPopup(connected) {
+  const pop       = document.getElementById('leads-popup');
+  const icon      = document.getElementById('lp-icon');
+  const tag       = document.getElementById('lp-tag');
+  const title     = document.getElementById('lp-title');
+  const sub       = document.getElementById('lp-sub');
+  const countdown = document.getElementById('lp-countdown');
+
+  clearTimeout(leadsPopupTimer);
+  clearInterval(leadsCountdownId);
+
+  if (connected) {
+    icon.textContent  = '🟢';
+    tag.textContent   = 'SENSOR STATUS';
+    title.textContent = 'ELECTRODE CONNECTED';
+    sub.innerHTML     = 'Sensor pads properly seated.<br><b>Ready to detect eye movements.</b>';
+    pop.className     = 'show type-connected';
+  } else {
+    icon.textContent  = '🔴';
+    tag.textContent   = 'SIGNAL LOST';
+    title.textContent = 'ELECTRODE DETACHED';
+    sub.innerHTML     = 'Press electrode pads firmly<br>against skin to restore signal.';
+    pop.className     = 'show type-detached';
+  }
+
+  leadsCountdownSec = 4;
+  countdown.textContent = `Dismissing in ${leadsCountdownSec}s\u2026`;
+  leadsCountdownId = setInterval(() => {
+    leadsCountdownSec--;
+    countdown.textContent = leadsCountdownSec > 0
+      ? `Dismissing in ${leadsCountdownSec}s\u2026`
+      : 'Dismissed';
+    if (leadsCountdownSec <= 0) clearInterval(leadsCountdownId);
+  }, 1000);
+
+  leadsPopupTimer = setTimeout(() => {
+    pop.className = pop.className.replace('show', '').trim();
+    clearInterval(leadsCountdownId);
+  }, 4000);
+}
+
+// ═══════════════════════════════════════════════
 //  EOG DATA HANDLER
 // ═══════════════════════════════════════════════
 let eogCol=-1, blinkTot=0;
@@ -984,12 +1360,29 @@ function handleEOG(d) {
   document.getElementById('ft-sig').textContent=sv;
   document.getElementById('sig-sub').textContent=sub;
   document.getElementById('sig-sub-ft').textContent=sub;
-  const q=d.leads_off?'NO SIGNAL':sigQ(d.raw_adc,d.filtered_adc);
+  const q=d.leads_off?'POOR':sigQ(d.raw_adc,d.filtered_adc);
   document.getElementById('f-ql').textContent=q;
   document.getElementById('sb-ql').textContent=q;
+
+  updateSensorStatus(!!d.leads_off);
+  updateQualityBars(d.leads_off ? null : q);
+
+  if (prevLeadsOff !== null && d.leads_off !== prevLeadsOff) {
+    if (d.leads_off) {
+      showLeadsPopup(false);
+      addLog('sys','SYS','Electrode detached — check pads');
+    } else {
+      showLeadsPopup(true);
+      addLog('sys','SYS','Electrode reconnected');
+    }
+  }
+  prevLeadsOff = !!d.leads_off;
+
   if(d.leads_off) document.getElementById('leads-alert').classList.add('on');
   else document.getElementById('leads-alert').classList.remove('on');
+
   if(isDemo) return;
+
   const gr=document.querySelector('.grid').getBoundingClientRect(), midY=gr.top+gr.height*.5;
   if(d.eye_x<-SNAP){ eogTX=gr.left+gr.width*.25; eogTY=midY; eogCol=0; }
   else if(d.eye_x>SNAP){ eogTX=gr.left+gr.width*.75; eogTY=midY; eogCol=1; }
@@ -997,15 +1390,29 @@ function handleEOG(d) {
     const rc=document.getElementById('rest').getBoundingClientRect();
     eogTX=rc.left+rc.width/2; eogTY=rc.top+rc.height/2; eogCol=-1;
   }
+
   const er=document.getElementById('eog-ring');
+
   if(d.blink_type===1){
     blinkTot++; session_data.blinks++; document.getElementById('blcnt').textContent=blinkTot;
     er.className='b1'; setTimeout(()=>er.className='',380);
-    if(eogCol>=0){const t=allTiles.find(x=>+x.dataset.col===eogCol&&+x.dataset.row===0);if(t)fireTile(t,'Eye single blink');}
+    if(!systemPaused && eogCol>=0){
+      const t=allTiles.find(x=>+x.dataset.col===eogCol&&+x.dataset.row===0);
+      if(t)fireTile(t,'Eye single blink');
+    }
+
   } else if(d.blink_type===2){
     blinkTot+=2; session_data.blinks+=2; document.getElementById('blcnt').textContent=blinkTot;
     er.className='b2'; setTimeout(()=>er.className='',380);
-    if(eogCol>=0){const t=allTiles.find(x=>+x.dataset.col===eogCol&&+x.dataset.row===1);if(t)fireTile(t,'Eye double blink');}
+    if(!systemPaused && eogCol>=0){
+      const t=allTiles.find(x=>+x.dataset.col===eogCol&&+x.dataset.row===1);
+      if(t)fireTile(t,'Eye double blink');
+    }
+
+  } else if(d.blink_type===3){
+    blinkTot+=3; session_data.blinks+=3; document.getElementById('blcnt').textContent=blinkTot;
+    er.className='b3'; setTimeout(()=>er.className='',450);
+    toggleSystemPause();
   }
 }
 
@@ -1014,7 +1421,9 @@ function handleEOG(d) {
 // ═══════════════════════════════════════════════
 let actTot=0;
 function fireTile(tile, src) {
+  if(systemPaused) return;
   if(tile.classList.contains('on-cooldown')) return;
+
   const lbl=tile.dataset.lbl, cls=tile.dataset.cls, msg=tile.dataset.msg;
   const tileName=tile.querySelector('.tn').textContent;
   actTot++; session_data.actions++;
@@ -1072,14 +1481,15 @@ function toggleMode(){
   if(isDemo){
     document.body.className='demo-mode';
     btn.textContent='SWITCH TO EOG';
-    badge.textContent='DEMO MODE';
+    // Only update badge if not currently paused
+    if(!systemPaused){ badge.style.cssText=''; badge.textContent='DEMO MODE'; }
     modeText.innerHTML='<b>DEMO MODE</b><br>Click a tile or hover 1 second to trigger';
     ring.style.display='block'; er.style.display='none';
   } else {
     document.body.className='eog-mode';
     btn.textContent='SWITCH TO DEMO';
-    badge.textContent='EOG MODE';
-    modeText.innerHTML='<b>EOG MODE</b><br>Look Left/Right &middot; Single blink = top &middot; Double blink = bottom';
+    if(!systemPaused){ badge.style.cssText=''; badge.textContent='EOG MODE'; }
+    modeText.innerHTML='<b>EOG MODE</b><br>Look Left/Right &middot; Single blink = top &middot; Double blink = bottom &middot; <b>Triple blink = PAUSE</b>';
     ring.style.display='none'; er.style.display='block';
     initEOGCursorToRest();
   }
@@ -1113,7 +1523,6 @@ window.addEventListener('resize',()=>{ positionRest(); if(!isDemo) initEOGCursor
 
 function inRest(x,y){ const r=restEl.getBoundingClientRect(),dx=x-(r.left+r.width/2),dy=y-(r.top+r.height/2); return Math.sqrt(dx*dx+dy*dy)<r.width/2; }
 
-// tileAt: returns null if any overlay is open OR if cursor is over a button/input
 function tileAt(x,y){
   if(isOverlayOpen()) return null;
   for(const t of allTiles){
@@ -1138,7 +1547,6 @@ function stopDwell(){
   if(hoveredTile){ hoveredTile.classList.remove('h'); hoveredTile.querySelector('.fill').style.height='0%'; hoveredTile=null; }
 }
 
-// EDIT button event blocking
 document.querySelectorAll('.tile-edit-btn').forEach(btn=>{
   btn.addEventListener('mousemove',  e=>e.stopPropagation());
   btn.addEventListener('mouseenter', e=>{ e.stopPropagation(); stopDwell(); });
@@ -1163,8 +1571,10 @@ document.addEventListener('mousemove',e=>{
   if(tile!==hoveredTile){
     if(hoveredTile){ hoveredTile.classList.remove('h'); hoveredTile.querySelector('.fill').style.height='0%'; }
     hoveredTile=tile; dwellActive=false; dwellBlocked=false; dsvg.style.left='-200px'; dcirc.style.strokeDashoffset='172';
-    if(hoveredTile&&!rest&&!hoveredTile.classList.contains('on-cooldown')){ hoveredTile.classList.add('h'); dwellActive=true; dwellStart=performance.now(); }
-  } else if(hoveredTile&&!rest&&!dwellActive&&!dwellBlocked&&!hoveredTile.classList.contains('on-cooldown')){
+    if(hoveredTile&&!rest&&!hoveredTile.classList.contains('on-cooldown')&&!systemPaused){
+      hoveredTile.classList.add('h'); dwellActive=true; dwellStart=performance.now();
+    }
+  } else if(hoveredTile&&!rest&&!dwellActive&&!dwellBlocked&&!hoveredTile.classList.contains('on-cooldown')&&!systemPaused){
     dwellActive=true; dwellStart=performance.now();
   }
   if(rest&&dwellActive){ dwellActive=false; dsvg.style.left='-200px'; if(hoveredTile) hoveredTile.querySelector('.fill').style.height='0%'; }
@@ -1174,6 +1584,7 @@ document.addEventListener('click',e=>{
   if(!isDemo) return;
   if(isOverlayOpen()) return;
   if(isInteractiveTarget(e.target)) return;
+  if(systemPaused) return;
   const tile=tileAt(e.clientX,e.clientY);
   if(!tile||inRest(e.clientX,e.clientY)) return;
   if(tile.classList.contains('on-cooldown')) return;
@@ -1185,7 +1596,7 @@ document.addEventListener('click',e=>{
 
 function loop(now){
   if(isDemo){
-    if(dwellActive&&hoveredTile&&!dwellBlocked&&!hoveredTile.classList.contains('on-cooldown')&&!isOverlayOpen()){
+    if(dwellActive&&hoveredTile&&!dwellBlocked&&!hoveredTile.classList.contains('on-cooldown')&&!isOverlayOpen()&&!systemPaused){
       const p=Math.min((now-dwellStart)/DWELL_MS,1);
       dcirc.style.strokeDashoffset=(172*(1-p)).toString();
       const rc=hoveredTile.getBoundingClientRect();
@@ -1207,11 +1618,13 @@ function loop(now){
     const tile=rest?null:tileAt(curX,curY);
     if(tile!==hoveredTile){
       if(hoveredTile){ hoveredTile.classList.remove('h'); hoveredTile.querySelector('.fill').style.height='0%'; }
-      hoveredTile=tile; dwellActive=!!tile&&!tile.classList.contains('on-cooldown'); dwellBlocked=false;
+      hoveredTile=tile;
+      dwellActive=!!tile&&!tile.classList.contains('on-cooldown')&&!systemPaused;
+      dwellBlocked=false;
       dsvg.style.left='-200px'; dcirc.style.strokeDashoffset='172';
-      if(hoveredTile){ hoveredTile.classList.add('h'); dwellStart=now; }
+      if(hoveredTile&&!systemPaused){ hoveredTile.classList.add('h'); dwellStart=now; }
     }
-    if(dwellActive&&hoveredTile&&!hoveredTile.classList.contains('on-cooldown')){
+    if(dwellActive&&hoveredTile&&!hoveredTile.classList.contains('on-cooldown')&&!systemPaused){
       const p=Math.min((now-dwellStart)/DWELL_MS,1);
       dcirc.style.strokeDashoffset=(172*(1-p)).toString();
       const rc=hoveredTile.getBoundingClientRect();
@@ -1223,6 +1636,22 @@ function loop(now){
   requestAnimationFrame(loop);
 }
 requestAnimationFrame(loop);
+
+function injectSimSequence() {
+  addLog('sys','SIM','Hardware-in-loop simulation injected');
+  document.getElementById('sim-banner').classList.add('on');
+  const steps = [
+    {eye_x:-120, blink_type:0, t:0},
+    {eye_x:-120, blink_type:1, t:820},
+    {eye_x:0,    blink_type:0, t:1050},
+    {eye_x:120,  blink_type:0, t:2300},
+    {eye_x:120,  blink_type:2, t:3100},
+    {eye_x:0,    blink_type:0, t:3500},
+  ];
+  steps.forEach(s => setTimeout(() =>
+    handleEOG({...s, leads_off:false, raw_adc:2148+(Math.random()*30|0), filtered_adc:2100}),
+  s.t));
+}
 </script>
 </body>
 </html>
